@@ -1,0 +1,45 @@
+<project basedir ="." default="compile">
+    <property environment="e"/>
+    <property name="scala.home"  value="${e.SCALA_HOME}"/>
+    <property name="jdk.home" value="${e.JAVA_HOME}"/>
+
+    <taskdef resource="scala/tools/ant/antlib.xml">
+        <classpath>
+            <pathelement location="${scala.home}/lib/scala-compiler.jar"/>
+            <pathelement location="${scala.home}/lib/scala-library.jar"/>
+        </classpath>
+    </taskdef>
+
+    <property name="src.dir" location="./src"/>
+    <property name="dest.dir" location="build"/>
+    <path id="build.classpath">
+        <pathelement location="${scala.home}/lib/scala-library.jar"/>
+        <pathelement location="${jdk.home}/lib/tools.jar"/>
+    </path>
+
+
+    <path id="run.classpath">
+        <pathelement location="${scala.home}/lib/scala-library.jar"/>
+        <pathelement location="${java.home}/lib/tools.jar"/>
+        <pathelement location="${dest.dir}"/>
+    </path>
+
+    <target name="init">
+        <mkdir dir="build"/>
+    </target>
+
+    <target name="compile" depends="init">
+        <scalac srcdir="${src.dir}" destdir="${dest.dir}" classpathref="build.classpath">
+            <include name="**/*.scala"/>
+        </scalac>
+    </target>
+
+    <target name="run" depends="compile">
+        <javadoc classpathref="run.classpath" >
+            <doclet name="com.dineshv.XmlDoclet.XmlDoclet">
+                <path refid="run.classpath"/>
+            </doclet>
+            <fileset includes="**/test/*.java" dir="${src.dir}"/>
+        </javadoc>
+    </target>
+</project>

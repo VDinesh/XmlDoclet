@@ -1,0 +1,50 @@
+<java>
+    <source-file>source/java/j2se/1.6/java/lang/Math.java</source-file>
+    <license><name>JAVA RESEARCH LICENSE</name><version>1.6</version><url>http://www.java.net/jrl.csp</url></license>
+    <package>
+        <name>java.lang</name>
+        <class>
+            <name>Math</name>
+            <fqn>java.lang.Math</fqn>
+            <pos><l>70</l></pos>
+            <modifiers><public/><final/></modifiers>
+            <extends><name>Object</name><package>java.lang</package></extends>
+            <implements/>
+            <comment>
+                <p>The class <code>Math</code> contains methods for performing basic numeric operations such as the elementary exponential, logarithm, square root, and trigonometric functions. </p>
+                <p>Unlike some of the numeric methods of class <code>StrictMath</code>, all implementations of the equivalent functions of class <code>Math</code> are not defined to return the bit-for-bit same results. This relaxation permits better-performing implementations where strict reproducibility is not required. </p>
+                <author>unascribed</author>
+                <author>Joseph D. Darcy</author>
+                <since>1.0</since>
+            </comment>
+            <fields>
+                <field>
+                    <name>E</name>
+                    <type>double</type>
+                    <modifiers><static/></modifiers>
+                    <pos><l>81</l></pos>
+                    <comment>The <code>double</code> value that is closer than any other to e, the base of the natural logarithms.</comment>
+                </field>
+            </fields>
+            <constructors>
+                <constructor>
+                    <name>Math</name>
+                    <pos><l>75</l></pos>
+                    <modifiers><private/></modifiers>
+                    <comment>
+                        <first-sentence><text/><val>Don't let anyone instantiate this class.</val></first-sentence>
+                    </comment>
+                </constructor>
+            </constructors>
+            <methods>
+                <method>
+                    <name>sin</name>
+                    <pos><l>103</l></pos>
+                    <modifiers><public/><static/></modifiers>
+                    <returns><type>double</type></returns>
+                    <params><param><name>a</name><type>double</type></param></params>
+                </method>
+            </methods>
+        </class>
+    </package>
+</java>
