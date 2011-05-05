@@ -4,3 +4,18 @@ XmlDoclet is a Doclet (i.e. plugs into Javadoc) and produces documentation in XM
 * Add information that is presently not captures or thrown away and make the docs more useful
 * Use this for analysis / generating code.
 
+=== Building ===
+
+XmlDoclet has an ANT build.xml which can be used to build the jar from source.
+Before you build it, make sure you have [http://www.scala-lang.org Scala] V 2.8 or better installed.
+
+=== Running ===
+
+Before you run Javadoc make sure you have the XmlDoclet.jar and scala-library.jar in the classpath.
+Invoke Javadoc as usual, even if you are invoking from inside Ant with the additional commandline parameters
+<pre>
+  javadoc -doclet com.dineshv.XmlDoclet.XmlDoclet ...other parameters
+</pre>
+
+In case XmlDoclet.jar is not on the classpath you can add the commandline parameter -Docletpath path/to/XmlDoclet.jar
+
