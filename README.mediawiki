@@ -1,0 +1,6 @@
+== XML Doclet ==
+XmlDoclet is a Doclet (i.e. plugs into Javadoc) and produces documentation in XML instead of HTML as Javadoc does.    This XML can be used for a variety of purposes like:
+* Produce a better looking HTML documentation than the one that has not changed since late 90s.
+* Add information that is presently not captures or thrown away and make the docs more useful
+* Use this for analysis / generating code.
+
