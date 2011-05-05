@@ -58,7 +58,7 @@ public class SimpleClass extends AbstractClass {
      * @param aI
      * @param aF
      * @param aB
-     * @return
+     * @return a boolean
      */
     public static boolean aPublicStaticMethod (int aI, float aF, boolean aB) {
         return true;

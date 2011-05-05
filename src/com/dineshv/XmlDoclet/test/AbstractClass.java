@@ -1,5 +1,7 @@
 package com.dineshv.XmlDoclet.test;
 
+import java.util.List;
+
 /**
  * An abstract class.
  *
@@ -51,4 +53,11 @@ public abstract class AbstractClass implements anInterface {
      * @return an Array of String.
      */
     public String[] returnsArray(String[][] a) { return a[0];}
+
+    /**
+     * returns a parametrized Type
+     * @param a
+     * @return
+     */
+    public List<anInterface> constructAList(String[][] a) { return null;}
 }

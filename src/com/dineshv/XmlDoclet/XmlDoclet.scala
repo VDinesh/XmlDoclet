@@ -77,10 +77,13 @@ trait XmlMethods {
   def type2Xml (t:Type):Elem = {
     if ("" != t.dimension) {
       <array><dim>{t.dimension.count((c) => (c=='['))}</dim><type>{t.typeName}</type></array>
-    } else <type>{t}</type>
+    } else {
+      if (t.asParameterizedType == null) <type>{t}</type>
+      else <parameterizedType><type>{t}</type></parameterizedType>
+    }
   }
   def params2xml (p:Parameter):Elem = {
-    <parameter><name>{p.name}</name><type>{type2Xml(p.`type`)}</type></parameter>
+    <parameter><name>{p.name}</name>{type2Xml(p.`type`)}</parameter>
   }
 }
 
